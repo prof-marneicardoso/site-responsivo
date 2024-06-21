@@ -1,0 +1,29 @@
+/* Importa a fonte Poppins (Google fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+
+    /* Torna suave o movimento do scroll */
+    scroll-behavior: smooth;
+}
+
+body {
+    /* background-color: #22223b; */
+    color: #f9f9f9;
+}
+
+main {
+    width: 60%;
+    margin: 2rem auto;
+}
+
+a {
+    text-decoration: none;
+    color: #f9f9f9;
+}
+
+a:hover {
+    color: deepskyblue;
+}

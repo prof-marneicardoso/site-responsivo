@@ -1,0 +1,288 @@
+/* Importa a fonte Poppins (Google fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Variáveis em CSS */
+:root {
+    /* Paleta de cores */
+    --cor-00: #f9f9f9;
+    --cor-01: #e0e1dd;
+    --cor-02: #778da9;
+    --cor-03: #415a77;
+    --cor-04: #1b263b;
+    --cor-05: #0d1b2a;
+    --cor-06: #fca311;
+
+    --cor-sombra: #0d1b2a61;
+    --sombra: 0 0.3rem 0.5rem 0.05rem var(--cor-sombra);
+}
+
+/* Reset: limpar as formatações padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+
+    /* Torna suave o movimento do scroll */
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cor-00);
+    color: var(--cor-05);
+}
+
+/* ===== Barra de navegação ===== */
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    background-color: var(--cor-03);
+    padding: 0.5rem 1rem;
+    position: fixed;
+    width: 100%;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+nav a {
+    text-decoration: none;
+    letter-spacing: 0.1rem;
+    color: var(--cor-01);
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    transition: 300ms;
+
+    /* Transforma o texto para maiúsculas */
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: var(--cor-06);
+}
+/* ===== /Barra de navegação ===== */
+
+
+
+/* ===== header: Banner com imagem ===== */
+header {
+    height: 100vh;
+    background-image: url('../img/foto.jpg');
+    background-size: cover;
+}
+/* ===== /header: Banner com imagem ===== */
+
+
+
+/* Todas as section */
+section {
+    padding: 3rem 1rem;
+}
+
+
+/* ===== section #info: Informações ===== */
+#info {
+    display: flex;
+    flex-direction: row;
+}
+
+#info div {
+    flex: 1;
+    padding: 2rem;
+}
+
+#info img {
+    width: 100%;
+}
+
+#info p {
+    text-align: justify;
+}
+/* ===== /section #info: Informações ===== */
+
+
+
+/* ===== section #produto: Produtos ===== */
+/* .grupo-produtos { */
+#produto {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 2rem;
+    padding: 2rem 3rem;
+}
+
+/* .grupo-produtos img { */
+#produto img {
+    width: 100%;
+    border: solid 0.8rem var(--cor-00);
+    border-radius: 0.8rem;
+    /* box-shadow: 0 0.3rem 0.5rem 0.05rem #0d1b2aa0; */
+    /* box-shadow: 0 0.3rem 0.5rem 0.05rem var(--cor-sombra); */
+    box-shadow: var(--sombra);
+}
+/* ===== /section #produto: Produtos ===== */
+
+
+
+/* ===== section #avaliacao: Avaliações ===== */
+.avaliacao {
+    padding: 3rem;
+}
+
+.avaliacao article {
+    margin: 1rem 0;
+    height: 8rem;
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+    gap: 2rem;
+    border: solid 0.1rem #778da9;
+}
+
+.avaliacao article button {
+    width: 25rem;
+    align-self: flex-end;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+}
+/* ===== /section #avaliacao: Avaliações ===== */
+
+/* Alt + Shift + F  == formatar o código */
+
+
+
+/* ===== Footer ===== */
+footer {
+    min-height: 15rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 1rem 3rem;
+    background-color: #0d1b2a;
+    color: #778da9;
+}
+
+footer div {
+    flex: 1;
+}
+
+footer li {
+    list-style-type: none;
+}
+/* ===== /Footer ===== */
+
+
+
+/* ===== Media Queries ===== */
+
+/* Portrait (Retrato): smartphone em pé */
+/* @media (max-width: 576px) { */
+@media (min-width: 340px) {
+    #info {
+        flex-direction: column;
+    }
+
+    #produto {
+        grid-template-columns: auto;
+    }
+
+    .avaliacao article {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .avaliacao article p {
+        text-align: justify;
+        padding: 0 1rem;
+    }
+
+    .avaliacao article button {
+        align-self: center;
+        width: 10rem;
+        margin-bottom: 2rem;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+
+    
+    /* Valicação Media Query */
+    /* nav {
+        background-color: #fe391b;
+    } */
+}
+
+/* Landscape (Paisagem): smartphone de lado */
+@media (min-width: 576px) {
+
+    /* Valicação Media Query */
+    /* nav {
+        background-color: #6adc00;
+    } */
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    #produto {
+        grid-template-columns: auto auto;
+    }
+
+    footer {
+        flex-direction: row;
+    }
+
+
+
+    /* Valicação Media Query */
+    /* nav {
+        background-color: #0051dc;
+    } */
+}
+
+/* Notebook */
+@media (min-width: 992px) {
+    #info {
+        flex-direction: row;
+    }
+
+    .avaliacao article {
+        flex-direction: row;
+        height: 8rem;
+    }
+
+    .avaliacao article button {
+        align-self: flex-end;
+        width: 25rem;
+        margin-bottom: 0;
+    }
+
+
+
+    /* Valicação Media Query */
+    /* nav {
+        background-color: #c2cad8;
+    } */
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+    #produto {
+        grid-template-columns: auto auto auto;
+    }
+
+
+
+    /* Valicação Media Query */
+    /* nav {
+        background-color: #45474a;
+    } */
+}
